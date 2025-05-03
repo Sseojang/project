@@ -165,54 +165,50 @@ document.addEventListener("DOMContentLoaded", () => {
   // 파일 업로드 처리 함수
   function handleFileUpload(file) {
     if (!file.type.startsWith("image/")) {
-      alert("이미지 파일만 업로드 가능합니다.");
-      return;
+        alert("이미지 파일만 업로드 가능합니다.");
+        return;
     }
 
     // Flask API로 이미지 전송
     const formData = new FormData();
     formData.append("file", file);
-  
-    fetch("https://eeolb2u26b.execute-api.us-east-2.amazonaws.com/prod/api/is-face", {
-      method: "POST",
-      body: formData
+
+    fetch("https://eeolb2u26b.execute-api.us-east-2.amazonaws.com/prod/api/is-face", {  // EC2 퍼블릭 IP로 변경
+        method: "POST",
+        body: formData
     })
     .then(res => res.json())
     .then(data => {
-      if (data.result) {
-        alert("사진에서 얼굴이 감지되었습니다.");
-        // 사람사진 판별 후 파일 저장
-        uploadedPhoto = file;
-      } else {
-        alert("사진에서 얼굴이 감지되지 않았습니다.");
-      }
+        if (data.result) {
+            // 얼굴이 감지된 경우 기존 미리보기·분석 로직 실행
+            uploadedPhoto = file;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                previewImage.src = e.target.result;
+                previewImage.style.display = "block";
+                const uploadButtonContent = uploadArea.querySelector(".upload-button-content");
+                if (uploadButtonContent) {
+                    uploadButtonContent.style.display = "none";
+                }
+
+                // upload-area의 height 속성 제거
+                uploadArea.style.height = "auto";
+                uploadArea.style.borderRadius = "15px";
+                uploadArea.style.padding = "10px";
+
+                // 제출 버튼 활성화 상태만 확인
+                checkSubmitButton();
+            };
+            reader.readAsDataURL(file);
+        } else {
+            alert("사진에서 얼굴이 감지되지 않았습니다.");
+        }
     })
     .catch(() => {
-      alert("서버 오류로 얼굴 판별에 실패했습니다.");
+        alert("서버 오류로 얼굴 판별에 실패했습니다.");
     });
-
-    // 이미지 미리보기 표시
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      previewImage.src = e.target.result;
-      previewImage.style.display = "block";
-      const uploadButtonContent = uploadArea.querySelector(
-        ".upload-button-content"
-      );
-      if (uploadButtonContent) {
-        uploadButtonContent.style.display = "none";
-      }
-      
-      // upload-area의 height 속성 제거
-      uploadArea.style.height = "auto";
-      uploadArea.style.borderRadius = "15px";
-      uploadArea.style.padding = "10px";
-
-      // 제출 버튼 활성화 상태만 확인
-      checkSubmitButton();
-    };
-    reader.readAsDataURL(file);
   }
+
 
   // 제출 버튼 활성화 상태 확인 함수
   function checkSubmitButton() {
