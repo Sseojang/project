@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append("file", file);
   
-    fetch("https://3.139.85.171:5000/api/is-face", {
+    fetch("https://eeolb2u26b.execute-api.us-east-2.amazonaws.com/prod/api/is-face", {
       method: "POST",
       body: formData
     })
