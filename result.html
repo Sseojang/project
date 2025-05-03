@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선글라스 AI 추천 결과</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 결과 화면 -->
+        <div class="screen" id="result-screen">
+            <h1 id="product-brand"></h1>
+            <h2 id="product-model"></h2>
+            
+            <div class="result-container">
+                <div class="product-image-container">
+                    <img id="product-image" src="" alt="추천 선글라스">
+                </div>
+                
+                <div class="product-info">
+                    <h2 id="recommended-name"></h2>
+                    <p id="product-description"></p>
+                </div>
+            </div>
+            
+            <div class="social-share">
+                <button id="share-button" class="primary-button">공유하기</button>
+            </div>
+            
+            <button id="restart-button" class="secondary-button">다시 시도하기</button>
+        </div>
+    </div>
+    
+    <script src="result.js"></script>
+</body>
+</html>

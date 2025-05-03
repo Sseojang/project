@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선글라스 AI 추천</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- 첫 번째 화면: 입력 화면 -->
+      <div class="screen" id="input-screen">
+        <h1>선글라스</h1>
+        <h1>AI 추천핑</h1>
+
+        <div class="sunglasses-slider">
+          <div class="slider-container">
+            <img src="" alt="선글라스 이미지" class="slider-image" />
+          </div>
+        </div>
+
+        <div class="form-container">
+          <div class="gender-selection">
+            <h2>성별을 선택해주세요</h2>
+            <div class="gender-buttons">
+              <button class="gender-button" data-gender="male">
+                <div class="icon-container">
+                  <img src="assets/man.png" alt="남성" class="gender-icon" />
+                </div>
+              </button>
+              <button class="gender-button" data-gender="female">
+                <div class="icon-container">
+                  <img src="assets/woman.png" alt="여성" class="gender-icon" />
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="age-selection">
+            <h2>나이를 입력해주세요</h2>
+            <div class="age-input-container">
+              <input
+                type="number"
+                id="age-input"
+                min="15"
+                max="100"
+                placeholder="나이 입력"
+              />
+              <span class="age-suffix">세</span>
+            </div>
+          </div>
+
+          <div class="photo-upload">
+            <h2>사진을 업로드해주세요</h2>
+            <div class="upload-container">
+              <input type="file" id="photo-input" accept="image/*" hidden />
+              <div class="upload-area" id="upload-area">
+                <div class="upload-button-content">
+                  <span>얼굴사진 업로드</span>
+                  <svg class="upload-icon" viewBox="0 0 24 24">
+                    <polygon
+                      points="12,4 4,12 9,12 9,20 15,20 15,12 20,12"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <img
+                  id="preview-image"
+                  src=""
+                  alt=""
+                  style="display: none; max-width: 100%; max-height: 200px"
+                />
+              </div>
+            </div>
+          </div>
+
+          <button id="submit-button" class="primary-button" disabled>
+            분석 시작하기
+          </button>
+        </div>
+      </div>
+
+      <!-- 두 번째 화면: 로딩 화면 -->
+      <div class="screen" id="loading-screen" style="display: none">
+        <h1>AI 얼굴 분석중</h1>
+        <div class="uploaded-photo-container">
+          <img id="analysis-image" src="" alt="분석 중인 사진" />
+        </div>
+        <div class="loader">
+          <div class="spinner"></div>
+        </div>
+        <div class="analysis-text-container">
+          <p class="analysis-text" id="analysis-text-1">사진 분석 중..</p>
+          <p class="analysis-text" id="analysis-text-2" style="display: none">
+            최적의 선글라스 찾는 중..
+          </p>
+          <p class="analysis-text" id="analysis-text-3" style="display: none">
+            조합 완료!!
+          </p>
+        </div>
+      </div>
+
+      <!-- 세 번째 화면: 결과 화면 -->
+      <div class="screen" id="result-screen" style="display: none">
+        <h1 id="product-brand"></h1>
+        <h2 id="product-model"></h2>
+
+        <div class="result-container">
+          <div class="product-image-container">
+            <img id="product-image" src="" alt="추천 선글라스" />
+          </div>
+
+          <div class="product-info">
+            <h2 id="recommended-name"></h2>
+            <p id="product-description"></p>
+          </div>
+        </div>
+
+        <div class="social-share">
+          <button id="share-button" class="primary-button">공유하기</button>
+        </div>
+
+        <button id="restart-button" class="secondary-button">
+          다시 시도하기
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

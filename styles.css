@@ -1,0 +1,520 @@
+/* 폰트 설정 */
+@font-face {
+    font-family: 'Hakgyoansim Puzzle Outline';
+    src: url('assets/Hakgyoansim\ Puzzle\ TTF\ Outline.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hakgyoansim Nadeuri B';
+    src: url('assets/Hakgyoansim\ Nadeuri\ TTF\ B.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HakgyoansimGgooreogiR';
+    src: url('assets/HakgyoansimGgooreogiR.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MapoBackpacking';
+    src: url('assets/MapoBackpacking.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 전체 스타일 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #F3F4F6;
+    color: #1d1d1f;
+    line-height: 1.6;
+}
+
+/* 앱 컨테이너 스타일 */
+.app-container {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F3F4F6;
+    min-height: 100vh;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+/* 화면 공통 스타일 */
+.screen {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+}
+
+/* 선글라스 슬라이더 스타일 */
+.sunglasses-slider {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+}
+
+.slider-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-color: #F3F4F6;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-image {
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    animation: floatingAnimation 4s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+.slider-image.fade {
+    opacity: 0;
+}
+
+h1 {
+    font-family: 'Hakgyoansim Puzzle Outline', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin: 5px 0;
+}
+
+h2 {
+    font-family: 'Hakgyoansim Nadeuri B', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+/* 입력 폼 스타일 */
+.form-container > div {
+    margin-bottom: 30px;
+}
+
+/* 성별 선택 버튼 스타일 */
+.gender-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.gender-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    background-color: #f5f5f7;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    overflow: hidden;
+}
+
+.gender-button.selected {
+    border-color: #0071e3;
+    background-color: #f0f8ff;
+}
+
+.icon-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gender-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gender-button.selected .gender-icon {
+    transform: scale(1.1);
+}
+
+.gender-button span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* 나이 입력 스타일 */
+.age-input-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #F3F4F6;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #e5e5ea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.age-input-container:focus-within {
+    border-color: #0071e3;
+    box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.2);
+}
+
+#age-input {
+    width: 100%;
+    padding: 14px 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    appearance: textfield;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    font-weight: 500;
+}
+
+#age-input::-webkit-outer-spin-button,
+#age-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#age-input::placeholder {
+    color: #a0a0a7;
+}
+
+.age-suffix {
+    padding-right: 16px;
+    font-size: 16px;
+    color: #0071e3;
+    font-weight: 500;
+}
+
+/* 사진 업로드 영역 스타일 */
+.upload-area {
+    width: 100%;
+    height: 60px;
+    border: 2px solid #0071e3;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #F3F4F6;
+    color: #0071e3;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-area:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.upload-button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.upload-button-content span {
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.upload-icon {
+    width: 24px;
+    height: 24px;
+    color: #0071e3;
+    transform: rotate(0deg);
+}
+
+/* 버튼 스타일 */
+.primary-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #0071e3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.primary-button:hover {
+    background-color: #0058b0;
+}
+
+.primary-button:disabled {
+    background-color: #a0a0a7;
+    cursor: not-allowed;
+}
+
+.secondary-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #f5f5f7;
+    color: #0071e3;
+    border: 2px solid #0071e3;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 15px;
+}
+
+.secondary-button:hover {
+    background-color: #e5f0ff;
+}
+
+/* 로딩 화면 스타일 */
+.uploaded-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #F3F4F6;
+}
+
+#analysis-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 113, 227, 0.2);
+    border-top-color: #0071e3;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.analysis-text-container {
+    text-align: center;
+    height: 40px;
+    position: relative;
+    margin: 20px 0;
+}
+
+.analysis-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #0071e3;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#loading-screen p {
+    text-align: center;
+    color: #6e6e73;
+    font-size: 16px;
+}
+
+/* 결과 화면 스타일 */
+/* 결과 페이지 특정 요소에 폰트 적용 */
+#product-brand {
+    font-family: 'HakgyoansimGgooreogiR', sans-serif;
+    font-size: 42px;
+}
+
+#product-model {
+    font-family: 'HakgyoansimGgooreogiR', sans-serif;
+    text-align: center;
+    font-size: 24px;
+}
+
+#product-description {
+    font-family: 'MapoBackpacking', sans-serif;
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0 20px;
+}
+
+.product-image-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    perspective: 500px;
+}
+
+#product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: floatingAnimation 4s ease-in-out infinite;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+@keyframes floatingAnimation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(8px) rotate(0.5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* 이미지 그림자 효과 */
+.product-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 70%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    filter: blur(5px);
+    animation: shadowAnimation 4s ease-in-out infinite;
+}
+
+@keyframes shadowAnimation {
+    0% {
+        width: 70%;
+        opacity: 0.3;
+    }
+    25% {
+        width: 65%;
+        opacity: 0.35;
+    }
+    50% {
+        width: 70%;
+        opacity: 0.3;
+    }
+    75% {
+        width: 75%;
+        opacity: 0.25;
+    }
+    100% {
+        width: 70%;
+        opacity: 0.3;
+    }
+}
+
+.product-info {
+    background-color: #f5f5f7;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#recommended-name {
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#product-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1d1d1f;
+    text-align: center;
+}
+
+.social-share {
+    margin-top: 30px;
+}
+
+/* 모바일 디바이스 상단 상태표시줄 스타일 */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+    padding: 0 15px;
+    background-color: #f5f5f7;
+}
+
+.status-bar .time {
+    font-weight: 600;
+}
+
+.status-bar .icons {
+    display: flex;
+    gap: 5px;
+}

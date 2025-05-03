@@ -1,0 +1,122 @@
+[
+    {
+        "id": "0",
+        "brandName" : "젠틀몬스터 X 마르지엘라",
+        "modelNumber" : "MM206 - 01",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/d262d43c-4218-40ac-ade8-6b51fdae9108/11003917_D_45.jpg",
+        "recommendedName": "차분한 그림자 핑",
+        "description": "부드럽게 깔리는 블랙 실루엣과 에비에이터의 클래식한 균형. 조용하지만 단단한 스타일로 업그레이드 시켜보세요."
+    },
+    {
+        "id": "1",
+        "brandName" : "젠틀몬스터 X 마르지엘라",
+        "modelNumber" : "MM212 - 01",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/ed9c9537-7b94-4153-98cf-678073d88794/11004053_D_45.jpg",
+        "recommendedName": "섬세하고 고요한 핑",
+        "description": "가는 블랙 프레임과 부드러운 라운드 쉐입이 만들어내는 균형감. 과하지 않지만, 확실히 특별한 무드를 전합니다."
+    },
+    {
+        "id": "2",
+        "brandName" : "젠틀몬스터 X 마르지엘라",
+        "modelNumber" : "MM207 - 01",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/959cd81e-657d-4bf0-8f4b-8070b449954b/11004009_D_45.jpg",
+        "recommendedName": "묵직한 한끗 핑",
+        "description": "강렬한 프레임 라인과 날카로운 쉐입이 어우러진 디자인. 과하지 않게, 단단한 개성을 선명하게 드러내보세요."
+    },
+    {
+        "id": "3",
+        "brandName" : "젠틀몬스터 X 마르지엘라",
+        "modelNumber" : "MM208 - 01",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/3c6c5d3d-acd5-41b8-b608-e5bb8d6c5c79/11003908_D_45.jpg",
+        "recommendedName": "세련된 여운 핑",
+        "description": "깔끔하고 세련된 프레임이 우아한 인상을 남깁니다. 간결하면서도 독특한 매력을 발산하는 디자인으로 스타일을 한층 업그레이드해보세요."
+    },
+    {
+        "id": "4",
+        "brandName" : "젠틀몬스터",
+        "modelNumber" : "Lilit - 01",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/N28KLVWRTWZM/N28KLVWRTWZM_D_45.jpg",
+        "recommendedName": "인상적인 우아한 핑",
+        "description": "섬세한 라인과 우아한 곡선이 조화를 이루는 디자인. 고급스러우면서도 강렬한 인상을 남기며, 스타일에 특별한 여운을 더해보세요."
+    },
+    {
+        "id": "5",
+        "brandName" : "젠틀몬스터 X 마르지엘라",
+        "modelNumber" : "MM003 - 01",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/OG7EIWPEVTXE/OG7EIWPEVTXE_D_45.jpg",
+        "recommendedName": "과감한 에너지 핑",
+        "description": "각진 프레임과 독창적인 디자인이 모던하면서도 강렬한 인상을 남깁니다. 스타일에 미래지향적이고 강력한 카리스마를 불어넣어보세요."
+    },
+    {
+        "id": "6",
+        "brandName" : "젠틀몬스터 X 제니",
+        "modelNumber" : "Jentle Salon Barrette - 02",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/service/product/image/c46bb2b8-b1e5-4a61-8e2c-f570b929e2ea/DSTWI61KT3JI_D_45.jpg",
+        "recommendedName": "브리티시 공주 핑",
+        "description": "섬세한 라인과 고급스러운 디테일이 더해진 디자인. 당신의 스타일에 은은한 여성미와 세련된 우아함을 더해보세요."
+    },
+    {
+        "id": "7",
+        "brandName" : "젠틀몬스터",
+        "modelNumber" : "Ytt - 02",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/W701LB8BQKLX/W701LB8BQKLX_D_45.jpg",
+        "recommendedName": "대담한 세련미 핑",
+        "description": "강렬한 라인과 독창적인 프레임이 돋보이는 독창적인 디자인. 세련된 분위기 속에 대담한 매력을 더하며, 스타일에 한층 강렬한 인상을 남겨보세요"
+    },
+    {
+        "id": "8",
+        "brandName" : "젠틀몬스터 X 마르지엘라",
+        "modelNumber" : "MM005 - 01",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/P7K1KEI4N4O3/P7K1KEI4N4O3_D_45.jpg",
+        "recommendedName": "시크한 모던 핑",
+        "description": "간결하고 정제된 프레임 디자인이 세련된 미니멀리즘을 완성합니다. 어떤 스타일에도 자연스럽게 어울리는, 언제나 빛나는 존재감을 선사해보세요."
+    },
+    {
+        "id": "9",
+        "brandName" : "젠틀몬스터 X 마르지엘라",
+        "modelNumber" : "MM114-L2",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/KNAL9NY1TTJF/KNAL9NY1TTJF_D_45.jpg",
+        "recommendedName": "정제된 우아함 핑",
+        "description": "날카로운 선과 세련된 프레임이 조화를 이루는 디자인. 모던하면서도 우아한 스타일을 강조하며, 고급스러운 매력을 더해보세요."
+    },
+    {
+        "id": "10",
+        "brandName" : "젠틀몬스터",
+        "modelNumber" : "Kunst - 01GD",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/5da5bd46-afc6-4ece-88d2-3006e657ab1d/1DP302G8ZJ1OS_D_45.jpg",
+        "recommendedName": "럭셔리한 골드 핑",
+        "description": "금색 프레임과 세련된 디자인이 만나 우아함과 고급스러움을 동시에 완성합니다. 차별화된 스타일로 특별한 존재감을 드러내보세요."
+    },
+    {
+        "id": "11",
+        "brandName" : "젠틀몬스터 X 마르지엘라",
+        "modelNumber" : "MM202 - G14(SM)",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/c2e710bd-6ebd-427a-b39d-9866be6ff253/11004316_D_45.jpg",
+        "recommendedName": "투명한 여백의 핑",
+        "description": "은은하게 흐르는 실버 프레임과 슬림한 실루엣이 조화를 이루는 디자인. 과하지 않지만 분명한 감도로, 당신의 스타일에 여백의 미학을 더해보세요."
+    },
+    {
+        "id": "12",
+        "brandName" : "젠틀몬스터 X 마르지엘라",
+        "modelNumber" : "MM004-G10",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/1B8QZY6FYPKVT/1B8QZY6FYPKVT_D_45.jpg",
+        "recommendedName": "클래식한 세련미 핑",
+        "description": "깊이 있는 그레이 컬러와 깔끔한 라인이 돋보이는 디자인. 클래식함과 현대적 감각이 어우러져 어떤 룩에도 시크한 엣지를 더하며, 강렬하면서도 우아한 인상을 남깁니다."
+    },
+    {
+        "id": "13",
+        "brandName" : "젠틀몬스터",
+        "modelNumber" : "Breezebe - 01",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/0b4d0b5f-c3c7-421d-9146-2d474b85d4c0/11JGREJGETINB_D_45.jpg",
+        "recommendedName": "정적인 매끈한 핑",
+        "description": "유려하게 흐르는 블랙 프레임과 과감한 실루엣. 단순함 속에서 강한 인상을 남기며, 스타일의 중심을 자연스럽게 차지합니다."
+    },
+    {
+        "id": "14",
+        "brandName" : "젠틀몬스터",
+        "modelNumber" : "Duns - 01",
+        "productImage" : "https://gm-prd-resource.gentlemonster.com/catalog/product/bulk/8a2af0ed-5b67-45f4-a173-ebf4594ab5a8/10S4IJHEFGR2A_D_45.jpg",
+        "recommendedName": "유연한 긴장감 핑",
+        "description": "얇은 블랙 프레임과 미묘한 곡선이 만들어내는 정제된 실루엣. 날카로움과 부드러움이 공존하는 디자인으로, 도시적인 시선을 완성해보세요."
+    }
+]
