@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append("file", file);
   
-    fetch("https://52.14.73.1:5000/api/is-face", {
+    fetch("https://3.139.85.171:5000/api/is-face", {
       method: "POST",
       body: formData
     })
