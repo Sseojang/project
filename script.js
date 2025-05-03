@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("서버 오류로 얼굴 판별에 실패했습니다.");
     });
 
-    if (uploadedPhoto != null) {
+    if (uploadedPhoto == null) {
       alert("사진을 다시 업로드 해주세요.");
       return;
     }
