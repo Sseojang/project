@@ -169,7 +169,27 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    uploadedPhoto = file;
+    // Flask API로 이미지 전송
+    const formData = new FormData();
+    formData.append("file", file);
+  
+    fetch("http://3.139.85.171:5000/api/is-face", {
+      method: "POST",
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.result) {
+        alert("사진에서 얼굴이 감지되었습니다.");
+        // 사람사진 판별 후 파일 저장
+        uploadedPhoto = file;
+      } else {
+        alert("사진에서 얼굴이 감지되지 않았습니다.");
+      }
+    })
+    .catch(() => {
+      alert("서버 오류로 얼굴 판별에 실패했습니다.");
+    });
 
     // 이미지 미리보기 표시
     const reader = new FileReader();
