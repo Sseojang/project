@@ -185,14 +185,16 @@ document.addEventListener("DOMContentLoaded", () => {
         uploadedPhoto = file;
       } else {
         alert("사진에서 얼굴이 감지되지 않았습니다.");
-        return;
       }
     })
     .catch(() => {
       alert("서버 오류로 얼굴 판별에 실패했습니다.");
-      return;
     });
 
+    if (uploadedPhoto != null) {
+      alert("사진을 다시 업로드 해주세요.");
+      return;
+    }
     // 이미지 미리보기 표시
     const reader = new FileReader();
     reader.onload = (e) => {
