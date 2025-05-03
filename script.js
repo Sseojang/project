@@ -180,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.json())
     .then(data => {
         if (data.result) {
+            console.log(`Detected ${data.face_count} faces`);
             // 얼굴이 감지된 경우 기존 미리보기·분석 로직 실행
             uploadedPhoto = file;
             const reader = new FileReader();
@@ -201,6 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
             reader.readAsDataURL(file);
         } else {
+            console.error('Face detection failed:', data.error);
             alert("사진에서 얼굴이 감지되지 않았습니다.");
         }
     })
