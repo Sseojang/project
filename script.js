@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append("file", file);
   
-    fetch("http://3.139.85.171:5000/api/is-face", {
+    fetch("https://3.139.85.171:5000/api/is-face", {
       method: "POST",
       body: formData
     })
@@ -191,10 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("서버 오류로 얼굴 판별에 실패했습니다.");
     });
 
-    if (uploadedPhoto == null) {
-      alert("사진을 다시 업로드 해주세요.");
-      return;
-    }
     // 이미지 미리보기 표시
     const reader = new FileReader();
     reader.onload = (e) => {
