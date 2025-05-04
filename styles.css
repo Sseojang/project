@@ -85,6 +85,7 @@ body {
     object-position: 50% 75%;       /* 추가: 세로 아래 강조 */
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+    clip-path: inset(20% 0 20% 0);
     animation: floatingAnimation 4s ease-in-out infinite;
     transform-style: preserve-3d;
     transform: scale(1.6);          /* 추가: 확대 */
@@ -430,6 +431,7 @@ h2 {
     animation: floatingAnimation 4s ease-in-out infinite;
     transform-style: preserve-3d;
     position: relative;
+    clip-path: inset(20% 0 20% 0);
     transform: scale(1.5);  /* 새로 추가 (선택 사항) */
 }
 
