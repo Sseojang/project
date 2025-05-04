@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("https://eeolb2u26b.execute-api.us-east-2.amazonaws.com/prod/api/is-face", {  // EC2 퍼블릭 IP로 변경
+    fetch("https://huggingface.co/spaces/pizzzaboy/deepface/api/is-face", {  // EC2 퍼블릭 IP로 변경
         method: "POST",
         body: formData
     })
