@@ -414,7 +414,7 @@ h2 {
     width: 700px;
     height: 700px;
     position: relative;
-    perspective: 500px;
+    perspective: 700px;
     overflow: hidden;  /* 새로 추가 */
 }
 
