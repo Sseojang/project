@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("https://pizzzaboy-deepface.hf.space/api/is-face", {  // EC2 퍼블릭 IP로 변경
+    fetch("https://pizzzaboy-sunfit.hf.space/api/is-face", {  // EC2 퍼블릭 IP로 변경
         method: "POST",
         body: formData
     })
