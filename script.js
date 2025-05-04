@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 로딩 스피너 표시
-    document.getElementById("face-detect-loading").style.display = "flex";
+    loader.style.display = "flex";
 
     // Fast API로 이미지 전송
     const formData = new FormData();

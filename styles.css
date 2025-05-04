@@ -227,7 +227,7 @@ h2 {
     background-color: #F3F4F6;
     color: #0071e3;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
