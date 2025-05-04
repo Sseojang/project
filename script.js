@@ -169,11 +169,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // Fast API로 이미지 전송
+    // Flask API로 이미지 전송
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("https://pizzzaboy-sunfit.hf.space/api/is-face", {  // EC2 퍼블릭 IP로 변경
+    fetch("https://pizzzaboy-sunfit.hf.space/api/is-face", {
         method: "POST",
         body: formData
     })
