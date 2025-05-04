@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append("file", file);
 
-    fetch("https://pizzzaboy-sunfit.hf.space/api/is-face", {
+    fetch("https://pizzzaboy-deepface.hf.space/api/is-face", {
         method: "POST",
         body: formData
     })
