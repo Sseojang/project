@@ -415,26 +415,29 @@ h2 {
     height: 300px;
     position: relative;
     perspective: 500px;
+    overflow: hidden;  /* 새로 추가 */
 }
 
 #product-image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;  /* 기존 contain → cover로 변경 */
+    object-position: center 35%;  /* 새로 추가 */
     animation: floatingAnimation 4s ease-in-out infinite;
     transform-style: preserve-3d;
     position: relative;
+    transform: scale(1.2);  /* 새로 추가 (선택 사항) */
 }
 
 @keyframes floatingAnimation {
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0) rotate(0deg) scale(1.2); /* scale 추가 */
     }
     50% {
-        transform: translateY(8px) rotate(0.5deg);
+        transform: translateY(8px) rotate(0.5deg) scale(1.2); /* scale 추가 */
     }
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform: translateY(0) rotate(0deg) scale(1.2); /* scale 추가 */
     }
 }
 
