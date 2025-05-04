@@ -78,8 +78,8 @@ body {
 }
 
 .slider-image {
-    max-width: 100%;
-    height: 100%;
+    max-width: 150%;
+    height: 150%;
     object-fit: contain;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
@@ -549,21 +549,5 @@ h2 {
     margin-top: 10px;
     font-size: 14px;
     font-weight: 500;
-  }
-
-  /* 선글라스 크기 */
-  .sunglasses-container {
-    width: 300px;
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .sunglasses-container img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150%; /* 이미지를 더 크게 표시 */
   }
   
