@@ -550,3 +550,20 @@ h2 {
     font-size: 14px;
     font-weight: 500;
   }
+
+  /* 선글라스 크기 */
+  .sunglasses-container {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .sunglasses-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%; /* 이미지를 더 크게 표시 */
+  }
+  
