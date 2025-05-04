@@ -411,8 +411,8 @@ h2 {
 }
 
 .product-image-container {
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
     position: relative;
     perspective: 500px;
     overflow: hidden;  /* 새로 추가 */
@@ -426,7 +426,7 @@ h2 {
     animation: floatingAnimation 4s ease-in-out infinite;
     transform-style: preserve-3d;
     position: relative;
-    transform: scale(1.4);  /* 새로 추가 (선택 사항) */
+    transform: scale(1.6);  /* 새로 추가 (선택 사항) */
 }
 
 @keyframes floatingAnimation {
