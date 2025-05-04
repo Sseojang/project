@@ -180,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.json())
     .then(data => {
         if (data.result) {
+            alert("사진에서 사람 얼굴이 감지되었습니다.");
             // 얼굴이 감지된 경우 기존 미리보기·분석 로직 실행
             uploadedPhoto = file;
             const reader = new FileReader();
