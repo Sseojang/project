@@ -80,11 +80,13 @@ body {
 .slider-image {
     max-width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;              /* 변경: contain → cover */
+    object-position: 50% 75%;       /* 추가: 세로 아래 강조 */
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
     animation: floatingAnimation 4s ease-in-out infinite;
     transform-style: preserve-3d;
+    transform: scale(1.4);          /* 추가: 확대 */
 }
 
 .slider-image.fade {
@@ -411,8 +413,8 @@ h2 {
 }
 
 .product-image-container {
-    width: 700px;
-    height: 700px;
+    width: 500px;
+    height: 500px;
     position: relative;
     perspective: 700px;
     overflow: hidden;  /* 새로 추가 */
@@ -427,7 +429,7 @@ h2 {
     animation: floatingAnimation 4s ease-in-out infinite;
     transform-style: preserve-3d;
     position: relative;
-    transform: scale(1.6);  /* 새로 추가 (선택 사항) */
+    transform: scale(1.5);  /* 새로 추가 (선택 사항) */
 }
 
 @keyframes floatingAnimation {
