@@ -169,9 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // 로딩 스피너 표시
-    loader.style.display = "flex";
-
     // Fast API로 이미지 전송
     const formData = new FormData();
     formData.append("file", file);
@@ -183,9 +180,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.json())
     .then(data => {
         if (data.result) {
-            // 로딩 스피너 숨김
-            document.getElementById("face-detect-loading").style.display = "none";
-
             // 얼굴이 감지된 경우 기존 미리보기·분석 로직 실행
             uploadedPhoto = file;
             const reader = new FileReader();
@@ -207,8 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
             };
             reader.readAsDataURL(file);
         } else {
-            // 에러 시에도 스피너 숨김
-            document.getElementById("face-detect-loading").style.display = "none";
             alert("사진에서 얼굴이 감지되지 않았습니다.");
         }
     })

@@ -78,8 +78,8 @@ body {
 }
 
 .slider-image {
-    max-width: 150%;
-    height: 150%;
+    max-width: 100%;
+    height: 100%;
     object-fit: contain;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
@@ -518,36 +518,3 @@ h2 {
     display: flex;
     gap: 5px;
 }
-
-/* 로딩 스피너 */
-.face-detection-loader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-  }
-  
-  .face-detection-spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(0, 113, 227, 0.2);
-    border-top-color: #0071e3;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-  }
-  
-  .face-detection-text {
-    color: white;
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  
