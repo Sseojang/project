@@ -63,12 +63,12 @@ body {
 .sunglasses-slider {
     margin: 0 auto;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
 }
 
 .slider-container {
     width: 100%;
-    height: 300px;
+    height: 400px;
     position: relative;
     background-color: #F3F4F6;
     overflow: hidden;
@@ -81,12 +81,13 @@ body {
     max-width: 100%;
     height: 100%;
     object-fit: cover;              /* 변경: contain → cover */
+    object-position: center 20%;
     object-position: 50% 75%;       /* 추가: 세로 아래 강조 */
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
     animation: floatingAnimation 4s ease-in-out infinite;
     transform-style: preserve-3d;
-    transform: scale(1.4);          /* 추가: 확대 */
+    transform: scale(1.6);          /* 추가: 확대 */
 }
 
 .slider-image.fade {
@@ -413,10 +414,10 @@ h2 {
 }
 
 .product-image-container {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     position: relative;
-    perspective: 700px;
+    perspective: 500px;
     overflow: hidden;  /* 새로 추가 */
 }
 
