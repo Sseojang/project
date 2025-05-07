@@ -189,8 +189,8 @@ document.addEventListener("DOMContentLoaded", () => {
         
         if (data.result) {
           // 얼굴이 감지된 경우 기존 미리보기·분석 로직 실행
-          uploadedPhoto = file;
           detectedShapeIndex = data.shape_index;
+          uploadedPhoto = file;
           const reader = new FileReader();
           reader.onload = (e) => {
             previewImage.src = e.target.result;
@@ -342,8 +342,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 랜덤 제품 선택 함수
   function getRandomProduct(products) {
-    Index = detectedShapeIndex
-    return products[Index];
+    const randomIndex = detectedShapeIndex;
+    return products[randomIndex];
   }
 
   // 결과 화면 업데이트 함수
