@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let selectedAge = null;
   let uploadedPhoto = null;
   let selectedProduct = null;
+  let detectedShapeIndex = null;
 
   // 슬라이더 이미지 요소와 데이터
   const sliderImage = document.querySelector(".slider-image");
@@ -97,37 +98,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // 나이 입력 이벤트 리스너
   ageInput.addEventListener("input", () => {
     const ageValue = parseInt(ageInput.value);
-    
+
     if (ageValue >= 15 && ageValue <= 100) {
       selectedAge = ageValue;
       // 입력된 나이가 유효한 범위내일 때 에러 메시지 있었다면 제거
-      const errorMessage = document.getElementById('age-error-message');
+      const errorMessage = document.getElementById("age-error-message");
       if (errorMessage) {
         errorMessage.remove();
       }
-    } else if (ageInput.value !== '') {
+    } else if (ageInput.value !== "") {
       selectedAge = null;
-      
+
       // 이미 에러 메시지가 있는지 확인
-      let errorMessage = document.getElementById('age-error-message');
-      
+      let errorMessage = document.getElementById("age-error-message");
+
       if (!errorMessage) {
         // 에러 메시지 생성
-        errorMessage = document.createElement('span');
-        errorMessage.id = 'age-error-message';
-        errorMessage.style.color = '#ff3b30';
-        errorMessage.style.fontSize = '12px';
-        errorMessage.style.marginRight = '5px';
-        errorMessage.textContent = '15-100세만 가능';
-        
+        errorMessage = document.createElement("span");
+        errorMessage.id = "age-error-message";
+        errorMessage.style.color = "#ff3b30";
+        errorMessage.style.fontSize = "12px";
+        errorMessage.style.marginRight = "5px";
+        errorMessage.textContent = "15-100세만 가능";
+
         // 에러 메시지 추가
-        const ageSuffix = document.querySelector('.age-suffix');
+        const ageSuffix = document.querySelector(".age-suffix");
         ageSuffix.parentNode.insertBefore(errorMessage, ageSuffix);
       }
     } else {
       selectedAge = null;
     }
-    
+
     checkSubmitButton();
   });
 
@@ -165,50 +166,62 @@ document.addEventListener("DOMContentLoaded", () => {
   // 파일 업로드 처리 함수
   function handleFileUpload(file) {
     if (!file.type.startsWith("image/")) {
-        alert("이미지 파일만 업로드 가능합니다.");
-        return;
+      alert("이미지 파일만 업로드 가능합니다.");
+      return;
     }
+    
+    // 로딩 모달창 표시
+    const loadingModal = document.getElementById("loading-modal");
+    loadingModal.style.display = "flex";
 
     // Flask API로 이미지 전송
     const formData = new FormData();
     formData.append("file", file);
 
     fetch("https://pizzzaboy-deepface.hf.space/api/is-face", {
-        method: "POST",
-        body: formData
+      method: "POST",
+      body: formData,
     })
-    .then(res => res.json())
-    .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
+        // 로딩 모달창 닫기
+        loadingModal.style.display = "none";
+        
         if (data.result) {
-            // 얼굴이 감지된 경우 기존 미리보기·분석 로직 실행
-            uploadedPhoto = file;
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                previewImage.src = e.target.result;
-                previewImage.style.display = "block";
-                const uploadButtonContent = uploadArea.querySelector(".upload-button-content");
-                if (uploadButtonContent) {
-                    uploadButtonContent.style.display = "none";
-                }
+          // 얼굴이 감지된 경우 기존 미리보기·분석 로직 실행
+          uploadedPhoto = file;
+          detectedShapeIndex = data.shape_index;
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            previewImage.src = e.target.result;
+            previewImage.style.display = "block";
+            const uploadButtonContent = uploadArea.querySelector(
+              ".upload-button-content"
+            );
+            if (uploadButtonContent) {
+              uploadButtonContent.style.display = "none";
+            }
 
-                // upload-area의 height 속성 제거
-                uploadArea.style.height = "auto";
-                uploadArea.style.borderRadius = "15px";
-                uploadArea.style.padding = "10px";
+            // upload-area의 height 속성 제거
+            uploadArea.style.height = "auto";
+            uploadArea.style.borderRadius = "15px";
+            uploadArea.style.padding = "10px";
 
-                // 제출 버튼 활성화 상태만 확인
-                checkSubmitButton();
-            };
-            reader.readAsDataURL(file);
+            // 제출 버튼 활성화 상태만 확인
+            checkSubmitButton();
+          };
+          reader.readAsDataURL(file);
         } else {
-            alert("다수의 얼굴 혹은 사람 얼굴이 감지되지 않았습니다.");
+          alert("다수의 얼굴 혹은 사람 얼굴이 감지되지 않았습니다.");
         }
-    })
-    .catch(() => {
+      })
+      .catch((error) => {
+        // 로딩 모달창 닫기
+        loadingModal.style.display = "none";
+        console.error("사진 분석 오류:", error);
         alert("서버 오류로 얼굴 판별에 실패했습니다.");
-    });
+      });
   }
-
 
   // 제출 버튼 활성화 상태 확인 함수
   function checkSubmitButton() {
