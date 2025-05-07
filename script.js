@@ -342,8 +342,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 랜덤 제품 선택 함수
   function getRandomProduct(products) {
-    const randomIndex = Math.floor(Math.random() * products.length);
-    return products[randomIndex];
+    Index = detectedShapeIndex
+    return products[Index];
   }
 
   // 결과 화면 업데이트 함수
